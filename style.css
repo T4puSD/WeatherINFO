@@ -1,0 +1,53 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.weather {
+  /* background: linear-gradient(#93f9b9, #1d976c); */
+  /* background: radial-gradient(#93f9b9, #1d976c); */
+  background: linear-gradient(#26d0ce, #3956ff);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.weather-icon {
+  /* background: red; */
+  margin: auto;
+  display: flex;
+  padding: 80px;
+  flex: 0;
+}
+.weather-details {
+  /* background: pink; */
+  display: flex;
+  height: 30%;
+}
+.weather-details-locname {
+  /* background: magenta; */
+  display: flex;
+  flex: 1;
+}
+.weather-details-temp {
+  /* background: yellow; */
+  display: flex;
+  flex: 1;
+}
+
+.weather-details-locname h1 {
+  margin: auto;
+  color: lightgrey;
+  font-size: 40px;
+}
+.temp-temperature {
+  display: flex;
+  color: lightgray;
+  margin: auto;
+}
+
+h2#temp,
+h3#temp-unit {
+  padding-left: 5px;
+  font-size: 40px;
+}

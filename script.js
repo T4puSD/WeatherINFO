@@ -39,9 +39,8 @@ var isMobile = {
 };
 
 if (isMobile.any()) {
-  // var corssanywhere = "https://cors-anywhere.herokuapp.com/";
-  // var api_url = corssanywhere + "http://ip-api.com/json";
-  var api_url = "http://ip-api.com/json";
+  var corssanywhere = "https://cors-anywhere.herokuapp.com/";
+  var api_url = corssanywhere + "http://ip-api.com/json";
 
   fetch(api_url)
     .then(result => {
