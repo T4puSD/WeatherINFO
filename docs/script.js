@@ -1,16 +1,17 @@
-let locname = document.querySelector("h1");
-let temp = document.getElementById("temp");
-let tempUnit = document.getElementById("temp-unit");
-let tempSummary = document.getElementById("summary");
-const skycons = new Skycons({ color: "white" });
-
 //apikeyval
-let darkskyAPIKey = "3f7c1724cc6d36ef5573e8fc5053a75d";
-let iplocationAPIKey = "f6824f664f1d47f8a75fbe5928c51e9a";
+let darkskyAPIKey = config.darkskyAPIKey;
+let iplocationAPIKey = config.iplocationAPIKey;
 
 //user's geolocation will be stored here
 var lat;
 var long;
+
+let locname = document.querySelector("h1");
+let temp = document.getElementById("temp");
+let tempUnit = document.getElementById("temp-unit");
+let tempSummary = document.getElementById("summary");
+let canvas = document.getElementById("icon1");
+const skycons = new Skycons({ color: "white" });
 
 String.prototype.replaceAll = function(search, replacement) {
   var target = this;
@@ -48,6 +49,7 @@ if (isMobile.any()) {
   tempSummary.style.fontSize = "2em";
   locname.style.fontSize = "3em";
   temp.style.fontSize = "3em";
+  canvas.style.cssText = "height:300px; width:300px";
   // var corssanywhere = "https://cors-anywhere.herokuapp.com/";
   // var api_url = corssanywhere + "http://ip-api.com/json";
   var api_url = `https://api.ipgeolocation.io/ipgeo?apiKey=${iplocationAPIKey}`;
