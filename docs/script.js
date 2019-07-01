@@ -1,8 +1,10 @@
 let locname = document.querySelector("h1");
 let temp = document.getElementById("temp");
 let tempUnit = document.getElementById("temp-unit");
+let tempSummary = document.getElementById("summary");
 const skycons = new Skycons({ color: "white" });
 
+//user's geolocation will be stored here
 var lat;
 var long;
 
@@ -39,6 +41,9 @@ var isMobile = {
 };
 
 if (isMobile.any()) {
+  tempSummary.style.fontSize = "2em";
+  locname.style.fontSize = "3em";
+  temp.style.fontSize = "3em";
   // var corssanywhere = "https://cors-anywhere.herokuapp.com/";
   // var api_url = corssanywhere + "http://ip-api.com/json";
   var api_url = "http://ip-api.com/json";
@@ -88,8 +93,7 @@ function fetchData(lat, long) {
       temp.textContent = Math.floor(
         ((data.currently.temperature - 32) * 5) / 9
       );
-      // skycons.add("icon1", Skycons.RAIN);
-      // skycons.play();
+      tempSummary.textContent = data.currently.summary;
       var iconToDisplay = data.currently.icon
         .toUpperCase()
         .replaceAll("-", "_");

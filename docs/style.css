@@ -16,8 +16,9 @@
   /* background: red; */
   margin: auto;
   display: flex;
+  flex-direction: column;
   padding: 80px;
-  flex: 0;
+  flex: 1;
 }
 .weather-details {
   /* background: pink; */
@@ -45,9 +46,38 @@
   color: lightgray;
   margin: auto;
 }
-
+h3#summary {
+  text-align: center;
+  color: rgb(238, 238, 238);
+  font-style: italic;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+}
 h2#temp,
 h3#temp-unit {
   padding-left: 5px;
   font-size: 40px;
 }
+
+.icon {
+  /* display: flex; */
+  /* background: red; */
+  /* flex: 1; */
+  margin: auto;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* width: 100%; */
+}
+#icon1 {
+  /* background: #26d0ce; */
+}
+.summary {
+  /* background: yellow; */
+  /* flex: 1; */
+}
+/* 
+@media only screen and (max-width: 600px) {
+  .weather {
+    background: lightblue;
+  }
+} */
