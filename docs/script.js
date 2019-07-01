@@ -4,6 +4,10 @@ let tempUnit = document.getElementById("temp-unit");
 let tempSummary = document.getElementById("summary");
 const skycons = new Skycons({ color: "white" });
 
+//apikeyval
+const darkskyAPIKey = "3f7c1724cc6d36ef5573e8fc5053a75d";
+const iplocationAPIKey = "f6824f664f1d47f8a75fbe5928c5";
+
 //user's geolocation will be stored here
 var lat;
 var long;
@@ -46,7 +50,7 @@ if (isMobile.any()) {
   temp.style.fontSize = "3em";
   // var corssanywhere = "https://cors-anywhere.herokuapp.com/";
   // var api_url = corssanywhere + "http://ip-api.com/json";
-  var api_url = "http://ip-api.com/json";
+  var api_url = "https://api.ipgeolocation.io/ipgeo?apiKey=" + iplocationAPIKey;
 
   fetch(api_url)
     .then(result => {
@@ -54,8 +58,8 @@ if (isMobile.any()) {
     })
     .then(data => {
       console.log(data);
-      lat = data.lat;
-      long = data.lon;
+      lat = data.latitude;
+      long = data.longitude;
       fetchData(lat, long);
     });
 } else {
@@ -79,7 +83,7 @@ function fetchData(lat, long) {
   // let apival = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=1d335577d297a6ceadb5cbc6597ffa0e`;
   // let apival = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1d335577d297a6ceadb5cbc6597ffa0e`;
   let crossor = "https://cors-anywhere.herokuapp.com/";
-  let apival = `https://api.darksky.net/forecast/3f7c1724cc6d36ef5573e8fc5053a75d/${lat},${long}?exclude=[minutely,hourly,daily]`;
+  let apival = `https://api.darksky.net/forecast/${darkskyAPIKey}/${lat},${long}?exclude=[minutely,hourly,daily]`;
   apival = crossor + apival;
 
   fetch(apival)
