@@ -5,8 +5,8 @@ let tempSummary = document.getElementById("summary");
 const skycons = new Skycons({ color: "white" });
 
 //apikeyval
-const darkskyAPIKey = "3f7c1724cc6d36ef5573e8fc5053a75d";
-const iplocationAPIKey = "f6824f664f1d47f8a75fbe5928c5";
+let darkskyAPIKey = "3f7c1724cc6d36ef5573e8fc5053a75d";
+let iplocationAPIKey = "f6824f664f1d47f8a75fbe5928c51e9a";
 
 //user's geolocation will be stored here
 var lat;
@@ -50,10 +50,11 @@ if (isMobile.any()) {
   temp.style.fontSize = "3em";
   // var corssanywhere = "https://cors-anywhere.herokuapp.com/";
   // var api_url = corssanywhere + "http://ip-api.com/json";
-  var api_url = "https://api.ipgeolocation.io/ipgeo?apiKey=" + iplocationAPIKey;
+  var api_url = `https://api.ipgeolocation.io/ipgeo?apiKey=${iplocationAPIKey}`;
 
   fetch(api_url)
     .then(result => {
+      console.log(result);
       return result.json();
     })
     .then(data => {
